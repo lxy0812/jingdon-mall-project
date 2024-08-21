@@ -1,0 +1,187 @@
+/* 顶部广告 start */
+.header{
+    width: 100%;
+    min-width: 1190px;
+    height: 80px;
+    background-color: rgb(106, 143, 16);
+    overflow: hidden;
+    position: relative;
+}
+.header img{
+    height: auto;
+    position: absolute;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* 顶部广告 end */
+/* 灰色导航 start */
+.grey-nav{
+    width: 100%;
+    min-width: 1190px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #e3e4e5;
+}
+.wrap{
+    width: 1190px;
+    margin: 0 auto;
+}
+.grey-nav  .grey-nav-left{
+    float: left;
+}
+.grey-nav .grey-nav-right{
+    float: right;
+}
+.grey-nav li{
+    float: left;
+    position: relative;
+}
+.grey-nav .space{
+    overflow: hidden;
+    margin: 11px 5px 0;
+    width: 1px;
+    height: 10px;
+    background-color: #ccc;
+}
+.grey-nav li span{
+    color: #ccc;
+    margin: 0 5px;
+}
+.grey-nav a{
+    color: #999;
+}
+.grey-nav a span{
+    color: #999;
+}
+.grey-nav i{
+    margin: 0 -3px;
+}
+.grey-nav .red{
+    color:#f10215;
+    margin: 0 -5px;
+}
+.grey-nav a:hover{
+    color:#f10215;
+}
+.grey-nav a:hover>span{
+    color:#f10215;
+}
+.download{
+    width: 180px;
+    height: 0px;
+    background: #fff;
+    box-shadow: 0 1px 5px #aaa;
+    position: absolute;
+    top:30px;
+    left: 50%;
+    margin-left: -150px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    float: left;
+}
+.download-img{
+    width: 80px;
+    height: 100px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.download img{
+    width: 70px;
+    height: 70px;
+    margin: 2px 0 2px;
+}
+.download-text{
+    width: 100px;
+    min-height: 70px;
+    overflow: hidden;
+}
+.download .title{
+    font-size: 12px;
+    line-height: 17px;
+    color: #666 !important;
+}
+.download .value{
+    line-height: 14px;
+    margin: 3px 0;
+    color: #f10214;
+}
+.grey-nav-right li:hover>.download{
+    height: 100px;
+}
+.stri{
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -18px;
+    display: none;
+
+}
+.grey-nav-right>li:hover>.stri{
+    display: block;
+}
+.grey-nav .text{
+    color: #999;
+    padding: 0;
+    margin: 0;
+}
+.grey-nav-right li:hover>.phone .text{
+    color:#f10215;
+}
+.grey-nav .iconfont{
+    top:0px;
+    position: absolute;
+    margin-left: 3px;
+}
+.grey-nav .address{
+    min-width: 76px;
+}
+.grey-nav .address:hover{
+    background:#fff;
+}
+.grey-nav .address .iconfont{
+    color: #f10215;
+}
+.grey-nav .address .text{
+    color: #999;
+    margin-left: 18px;
+}
+.grey-nav .address:hover>.text{
+    color: #f10215;
+}
+.grey-nav .mylist{
+    width: 120px;
+    height: 0px;
+    background: #fff;
+    box-shadow: 0 1px 5px #aaa;
+    position: absolute;
+    right: 0;
+    top:30px;
+    overflow: hidden;
+    margin-left: -45px;
+}
+.grey-nav .down{
+    min-width: 62px;
+}
+.grey-nav .down:hover{
+    background:#fff;
+}
+.grey-nav .down:hover>.mylist{
+    height: 100px;
+}
+.grey-nav .down .mydown{
+    margin: 0px 0px;
+    color: #999;
+}
+.grey-nav .down:hover>.mydown{
+    color: #f10215;
+}
+/* 灰色导航 end */
