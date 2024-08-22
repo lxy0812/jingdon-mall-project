@@ -1,3 +1,6 @@
+body{
+    background-color: #f4f4f4;
+}
 /* 顶部广告 start */
 .top{
     width: 100%;
@@ -191,6 +194,7 @@
 .header{
     width: 100%;
     height: 140px;
+    background-color: #fff;
 }
 .header-box{
     position: relative;
@@ -364,6 +368,7 @@
     overflow: hidden;
     background-color: #fff;
     box-shadow: 1px 2px 1px rgba(0, 0, 0 / 20%);
+    z-index: 2;
 }
 .search-help p{
     text-align: left;
@@ -416,3 +421,276 @@
     color: #d71212;
 }
 /* 头部 end */
+/* 轮播图 start */
+.banner{
+    width: 100%;
+    height: 470px;
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+.banner-box{
+    display: flex; /* 启用 Flexbox 布局 */
+    align-items: stretch; /* 使子元素高度填充容器高度 */
+    height: 470px;
+}
+.banner-box .fs_col1{
+    position: relative;
+    width: 190px;
+    background-color: #fff;
+}
+.banner-box .fs_col2{
+    width: 590px;
+    margin-left: 10px;
+    position: relative;
+}
+.banner-box .fs_col3{
+    width: 390px;
+    margin-left: 10px;
+}
+.banner-box .fs_col1 ul{
+    overflow: hidden;
+    padding: 10px 0;
+    height: 450px;
+    background-color: #fefefe;
+    color: #636363;
+}
+.banner-box .fs_col1 li{
+    overflow: hidden;
+    padding-left: 18px;
+    font-size: 0;
+    height: 25px;
+    line-height: 25px;
+}
+.banner-box .fs_col1 a{
+    font-size: 14px;
+    color: #333;
+}
+.banner-box .fs_col1 a:hover{
+    color: #d71212;
+}
+.banner-box .fs_col1 span{
+    padding: 0 2px;
+    font-size: 12px;
+}
+.prev,.next{
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 25px;
+    height: 35px;
+    line-height: 35px;
+    background-color: rgba(0, 0, 0, 0.15);
+    font-size: 20px;
+    transition: background-color .2s ease;
+    cursor: pointer;
+}
+.prev:hover,.next:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.prev{
+    left: 0;
+    border-radius: 0 18px 18px 0;
+}
+.next{
+    right: 0;
+    border-radius: 18px 0 0 18px;
+}
+.fs_col2 a{
+    color: #fff;
+}
+.fs_col2 a:hover{
+    color: #fff;
+}
+.next i{
+    margin-left: 8px;
+}
+.banner-btn{
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    width: 90px;
+    height: 13.8px;
+}
+.banner-btn li{
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin-left: 4px;
+    border: 0.8px;
+    border: 1px solid rgba(0, 0, 0, .15);
+    background-color: rgba(255, 255, 255, .4);
+    border-radius: 50%;
+}
+.banner-btn .active{
+    position: relative;
+    top: -2px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid rgba(0, 0, 0, .1);
+    background-color: rgba(255, 255, 255, 1);
+}
+.fs_col3 .box1{
+    display: flex;
+    width: 390px;
+    height: 96px;
+    background-color: #fff;
+}
+.fs_col3 .box2, .box3{
+    width: 390px;
+    height: 110px;
+    margin-top: 10px;
+    background-color: #fff;
+}
+.fs_col3 .box4{
+    width: 390px;
+    height: 112px;
+    margin-top: 10px;
+    padding-top: 12px;
+    background-color: #fff;
+}
+.fs_col3 .box1 .logo_info{
+    width: 126px;
+    height: 96px;
+}
+.fs_col3 .box1 .user{
+    width: 264px;
+    height: 96px;
+}
+.fs_col3 .box1 .logo_info .user-logo{
+    width: 28px;
+    height: 28px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+.fs_col3 .box1 .logo_info img{
+    position: absolute;
+    top: 14px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.fs_col3 .box1 .welcome-text{
+    margin-top: 20px;
+    width: 126px;
+    height: 40px;
+}
+.fs_col3 .box1 .welcome{
+    width: 100%;
+    text-align: center;
+    line-height: 20px;
+}
+.fs_col3 .box1 .welcome>a{
+    color: #666666;
+}
+.fs_col3 .box1 .welcome>a:hover{
+    color: #d71212;
+}
+.fs_col3 .box1 .logo_area{
+    width: 126px;
+    height: 20px;
+    text-align: center;
+}
+.fs_col3 .box1 .user-right{
+    width: 264px;
+    position: relative;
+}
+.fs_col3 .box1 .plus{
+    position: absolute;
+    width: 124px;
+    height: 80px;
+    margin-top: 8px;
+    background: url(./../img/plus.png);
+    background-size: cover;
+    border-radius: 4px;
+}
+.fs_col3 .box1 .company{
+    position: absolute;
+    width: 124px;
+    height: 80px;
+    margin-top: 8px;
+    right: 8px;
+    background: url(./../img/company.png);
+    background-size: cover;
+    border-radius: 4px;
+}
+.box1 .title{
+    margin-top: 10px;
+    margin-left: 8px;
+    font-weight: 600;
+    font-size: 13px;
+}
+.box1 .sub_titie{
+    margin-left: 8px;
+    font-size: 12px;
+    line-height: 12px;
+}
+.box1 .user_array{
+    margin-left: 8px;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 400;
+}
+.box1 .user_array i{
+    font-size: 11px;
+}
+.box1 .plus .title{
+    color: #663300;
+}
+.box1 .plus .sub_titie{
+    color: #A88100;
+}
+.box1 .plus .user_array{
+    color: #663300;
+}
+.box1 .company .title{
+    color: #054180;
+}
+.box1 .company .sub_titie{
+    color: #3369a5;
+}
+.box1 .company .user_array{
+    color: #054180;
+}
+.box2 .left, .box3 .left{
+    position: relative;
+    margin: 8px 6px 8px 8px;
+    float: left;
+    width: 83px;
+    height: 94px;
+    background: url(./../img/小背景.png);
+    background-size: cover;
+}
+.box2 a, .box3 a{
+    position: absolute;
+    margin: 5px auto;
+}
+.box4 .service_item{
+    position: relative;
+    float: left;
+    width: 78px;
+    height: 55px;
+    background: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+.box4 .service_ico{
+    position: relative;
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin: 0 auto;
+}
+.box4 .service_ico img{
+    width: 28px;
+    height: 28px;
+}
+.box4 .service_txt{
+    display: block;
+    width: 48px;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 2px solid #fff;
+    color: #333;
+}
+/* 轮播图 end */
