@@ -44,6 +44,7 @@ keyword.oninput = function(){
         },500);
     }
 };
+
 // 实现轮播图切换
 let img = document.querySelector('.img');
 let prev = document.querySelector('.prev');
@@ -112,4 +113,77 @@ for (let i = 0; i < lis.length; i++){
         count = i;
         cutImg();
     };
-} 
+}
+
+// 实现楼层定位切换
+let topLong = document.querySelector('.top');
+let greyNav = document.querySelector('.grey-nav');
+let header = document.querySelector('.header');
+let banner = document.querySelector('.banner');
+let elevator = document.querySelector('.elevator');
+
+let items = document.querySelectorAll('.content .item');
+let elevatorA = document.querySelectorAll('.elevator a');
+
+let elevatorArr = [];
+
+let base = topLong.offsetHeight + greyNav.offsetHeight + header.offsetHeight + banner.offsetHeight;
+elevatorArr.push(base - 30);
+
+for(let i = 0; i < items.length; i++){
+    base = base + items[i].offsetHeight;
+    elevatorArr.push(base - 30);
+}
+
+function cleanColor(){
+    for(let i = 0; i < items.length; i++){
+        elevatorA[i].style.color = '';
+    }
+}
+
+document.onscroll = function(){
+    // 获取滚动条垂直方向的滚动距离
+    let roll = document.documentElement.scrollTop || document.body.scrollTop;
+    // 获取top的高度
+    let topHeight = topLong.offsetHeight; //包括top、padding、border
+    let greyNavHeight = greyNav.offsetHeight;
+    let headerHeight = header.offsetHeight;
+    let bannerHeight = banner.offsetHeight;
+    if(roll >= topHeight + greyNavHeight + headerHeight + bannerHeight - 30){
+        elevator.className = 'elevator elevator-fix';
+    }else{
+        elevator.className = 'elevator';
+    }
+
+    if(roll >= elevatorArr[0] && roll <= elevatorArr[1]){
+        cleanColor();
+        elevatorA[0].style.color = '#e1251b';
+    }else if(roll >= elevatorArr[1] && roll <= elevatorArr[2]){
+        cleanColor();
+        elevatorA[1].style.color = '#e1251b';
+    }else if(roll >= elevatorArr[2] && roll <= elevatorArr[3]){
+        cleanColor();
+        elevatorA[2].style.color = '#e1251b';
+    }else{
+        cleanColor();
+    }
+}
+
+// 返回顶部
+// 等待DOM加载完成
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取所有class为toTop的元素
+    var toTopElements = document.querySelectorAll('.toTop');
+    
+    // 为每个元素添加点击事件监听器
+    toTopElements.forEach(function(element) {
+        element.addEventListener('click', function() {
+            // 滚动到页面顶部
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth' // 平滑滚动
+            });
+        });
+    });
+});

@@ -694,3 +694,121 @@ body{
     color: #333;
 }
 /* 轮播图 end */
+/* 主体 start */
+.content{
+    width: 100%;
+    position: relative;
+}
+.youxuan{
+    height: 980px;
+    margin-bottom: 20px;
+}
+.guangchang{
+    height: 1005px;
+    margin-bottom: 20px;
+}
+.tuijian{
+    height: 1870px;
+    margin-bottom: 20px;
+}
+.content .floorhd{
+    height: 65px;
+}
+.content .floorhd_title{
+    position: relative;
+    width: 150px;
+    height: 45px;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 45px;
+    padding: 0 30px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    color: #333;
+}
+.floorhd_title::before{
+    background-image: url(./../img/sprite.png);
+    width: 25px;
+    height: 20px;
+}
+.floorhd_title::after{
+    background-image: url(./../img/sprite.png);
+    width: 25px;
+    height: 20px;
+}
+.floorhd_title::before, .floorhd_title::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+}
+.floorhd_title::before{
+    background-position: 0 0;
+    left: 0;
+}
+.floorhd_title::after{
+    background-position: -25px 0;
+    right: 0;
+}
+.elevator{
+    width: 58px;
+    height: 290px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: 615px;
+    overflow: hidden;
+}
+.elevator li{
+    display: block;
+    width: 58px;
+    height: 58px;
+    line-height: 19px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    transition: color .2s ease;
+    background-color: #fff;
+}
+.elevator a{
+    display: block;
+    width: 58px;
+    height: 58px;
+    padding: 10px 0px;
+    position: absolute;
+}
+.elevator li:hover{
+    background-color: #c81623;
+}
+.elevator a:hover{
+    color: #fff !important;
+}
+.elevator a::after{
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    left: 50%;
+    top: 0px;
+    bottom: 0;
+    margin-left: -20px;
+    background: linear-gradient(270deg, white, #eeeeee, #eeeeee, white);
+    content: "";
+}
+.elevator-fix{
+    position: fixed;
+    top: 75px;
+    animation: eleShow 0.5s ease;
+    height: 348px;
+    background-color: #fff;
+}
+@keyframes eleShow{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 75px;
+    }
+}
+/* 主体 end */
