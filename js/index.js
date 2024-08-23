@@ -128,11 +128,11 @@ let elevatorA = document.querySelectorAll('.elevator a');
 let elevatorArr = [];
 
 let base = topLong.offsetHeight + greyNav.offsetHeight + header.offsetHeight + banner.offsetHeight;
-elevatorArr.push(base - 30);
+elevatorArr.push(base - 40);
 
 for(let i = 0; i < items.length; i++){
     base = base + items[i].offsetHeight;
-    elevatorArr.push(base - 30);
+    elevatorArr.push(base);
 }
 
 function cleanColor(){
@@ -140,6 +140,11 @@ function cleanColor(){
         elevatorA[i].style.color = '';
     }
 }
+
+let search = document.querySelector('.search');
+let searchM = document.querySelector('.search-m');
+let form = document.querySelector('.form');
+let searchLogo = document.querySelector('.search_logo');
 
 document.onscroll = function(){
     // 获取滚动条垂直方向的滚动距离
@@ -149,16 +154,24 @@ document.onscroll = function(){
     let greyNavHeight = greyNav.offsetHeight;
     let headerHeight = header.offsetHeight;
     let bannerHeight = banner.offsetHeight;
-    if(roll >= topHeight + greyNavHeight + headerHeight + bannerHeight - 30){
+    if(roll >= topHeight + greyNavHeight + headerHeight + bannerHeight - 40){
         elevator.className = 'elevator elevator-fix';
+        search.className = 'search search-fix';
+        searchM.style.height = '50px';
+        form.style.top = '8px';
+        searchLogo.style.display = 'block';
     }else{
         elevator.className = 'elevator';
+        search.className = 'search';
+        searchM.style.height = '60px';
+        form.style.top = '25px';
+        searchLogo.style.display = 'none';
     }
 
-    if(roll >= elevatorArr[0] && roll <= elevatorArr[1]){
+    if(roll >= elevatorArr[0] && roll <= elevatorArr[1] - 20){
         cleanColor();
         elevatorA[0].style.color = '#e1251b';
-    }else if(roll >= elevatorArr[1] && roll <= elevatorArr[2]){
+    }else if(roll >= elevatorArr[1] -20 && roll <= elevatorArr[2]){
         cleanColor();
         elevatorA[1].style.color = '#e1251b';
     }else if(roll >= elevatorArr[2] && roll <= elevatorArr[3]){
@@ -181,6 +194,39 @@ document.addEventListener('DOMContentLoaded', function() {
             // 滚动到页面顶部
             window.scrollTo({
                 top: 0,
+                left: 0,
+                behavior: 'smooth' // 平滑滚动
+            });
+        });
+    });
+
+    var toYouxuanElements = document.querySelectorAll('.toYouxuan');
+    toYouxuanElements.forEach(function(element) {
+        element.addEventListener('click', function() {
+            window.scrollTo({
+                top: elevatorArr[0],
+                left: 0,
+                behavior: 'smooth' // 平滑滚动
+            });
+        });
+    });
+
+    var toGuangchangElements = document.querySelectorAll('.toGuangchang');
+    toGuangchangElements.forEach(function(element) {
+        element.addEventListener('click', function() {
+            window.scrollTo({
+                top: elevatorArr[1] - 20,
+                left: 0,
+                behavior: 'smooth' // 平滑滚动
+            });
+        });
+    });
+
+    var toTuijianElements = document.querySelectorAll('.toTuijian');
+    toTuijianElements.forEach(function(element) {
+        element.addEventListener('click', function() {
+            window.scrollTo({
+                top: elevatorArr[2] + 1,
                 left: 0,
                 behavior: 'smooth' // 平滑滚动
             });
